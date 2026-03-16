@@ -186,8 +186,6 @@ export default function RegisterPage() {
     if (authError) {
       if (authError.message === "User already registered") {
         setError("An account with this email already exists.");
-      } else if (authError.code === "23505") {
-        setError("Username already taken.");
       } else {
         setError(authError.message);
       }

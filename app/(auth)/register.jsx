@@ -1,3 +1,4 @@
+import DateTimePicker from "@react-native-community/datetimepicker";
 import { useRouter } from "expo-router";
 import { useEffect, useState } from "react";
 import {
@@ -23,6 +24,7 @@ export default function RegisterPage() {
   const [selectedGoal, setSelectedGoal] = useState(null);
   const [selectedInterests, setSelectedInterests] = useState([]);
   const [allInterests, setAllInterests] = useState([]);
+  const [showDatePicker, setShowDatePicker] = useState(false);
   const [profileData, setProfileData] = useState({
     displayName: "",
     bio: "",
@@ -50,7 +52,7 @@ export default function RegisterPage() {
       }
       setAllInterests(
         (data || []).map((i) => ({
-          label: i.name,
+          label: i.interest,
           value: i.id,
           emoji: i.emoji || "⭐",
         })),
@@ -129,6 +131,7 @@ export default function RegisterPage() {
       setError("Please enter your date of birth.");
       return;
     }
+
     nextStep();
   };
 
@@ -371,17 +374,45 @@ export default function RegisterPage() {
               }}
             />
             <Text style={styles.label}>Date of Birth</Text>
-            <TextInput
+            <Pressable
               style={styles.input}
-              placeholder="YYYY-MM-DD"
-              placeholderTextColor="#999"
-              value={profileData.dateOfBirth}
-              onChangeText={(text) => {
-                setProfileData((prev) => ({ ...prev, dateOfBirth: text }));
-                setError(null);
-              }}
-              keyboardType="numeric"
-            />
+              onPress={() => setShowDatePicker(true)}
+            >
+              <Text
+                style={{
+                  color: profileData.dateOfBirth ? "#2C2C2C" : "#999",
+                  fontSize: 15,
+                }}
+              >
+                {profileData.dateOfBirth
+                  ? new Date(profileData.dateOfBirth).toLocaleDateString()
+                  : "Select date of birth"}
+              </Text>
+            </Pressable>
+
+            {showDatePicker && (
+              <DateTimePicker
+                value={
+                  profileData.dateOfBirth
+                    ? new Date(profileData.dateOfBirth)
+                    : new Date()
+                }
+                mode="date"
+                display="default"
+                maximumDate={new Date()}
+                onChange={(event, selectedDate) => {
+                  setShowDatePicker(false);
+                  if (event.type === "dismissed") return;
+                  if (selectedDate) {
+                    setProfileData((prev) => ({
+                      ...prev,
+                      dateOfBirth: selectedDate.toISOString().split("T")[0],
+                    }));
+                    setError(null);
+                  }
+                }}
+              />
+            )}
           </View>
         )}
 

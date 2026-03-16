@@ -1,15 +1,18 @@
+import { useRouter } from "expo-router";
 import * as Speech from "expo-speech";
 import { useEffect, useRef, useState } from "react";
 import {
-    Modal,
-    Pressable,
-    StyleSheet,
-    Text,
-    View,
-    useWindowDimensions,
+  Modal,
+  Pressable,
+  StyleSheet,
+  Text,
+  View,
+  useWindowDimensions,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import DraggableLetter from "../../components/letter";
+
+export const unstable_settings = { initialRouteName: "learn" };
 
 const MAX_MISTAKE = 3;
 
@@ -38,7 +41,6 @@ const arabicLetters = {
   9: "ف",
   10: "ش",
 };
-
 const generateLetters = (width, boardHeight) => {
   const result = [];
   const placed = [];
@@ -85,7 +87,9 @@ export default function Letters() {
   const [tutorialVisible, setTutorialVisible] = useState(false);
   const [lostScreenVisible, setLostScreenVisible] = useState(false);
 
+  const router = useRouter();
   useEffect(() => {
+    resetGame();
     setTutorialVisible(true);
   }, []);
 
@@ -240,6 +244,18 @@ export default function Letters() {
               onPress={() => resetGame.current()}
             >
               <Text style={styles.modalButtonText}>Play Again</Text>
+            </Pressable>
+
+            <Pressable
+              style={({ pressed }) => [
+                styles.modalButtonSecondary,
+                pressed && styles.modalButtonSecondaryPressed,
+              ]}
+              onPress={() => router.push("/games")}
+            >
+              <Text style={styles.modalButtonSecondaryText}>
+                ← Back to Game Hub
+              </Text>
             </Pressable>
           </View>
         </View>
@@ -418,5 +434,22 @@ const styles = StyleSheet.create({
     color: "#FFFFFF",
     fontSize: 16,
     fontWeight: "600",
+  },
+  modalButtonSecondary: {
+    paddingVertical: 14,
+    paddingHorizontal: 40,
+    borderRadius: 12,
+    borderWidth: 1.5,
+    borderColor: "#4A90D9",
+    marginTop: 10,
+  },
+  modalButtonSecondaryPressed: {
+    backgroundColor: "#EBF3FB",
+  },
+  modalButtonSecondaryText: {
+    color: "#4A90D9",
+    fontSize: 16,
+    fontWeight: "600",
+    textAlign: "center",
   },
 });

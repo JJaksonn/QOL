@@ -2,6 +2,7 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { useRouter } from "expo-router";
 import { Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 
+export const unstable_settings = { initialRouteName: "learn" };
 //Letter Matching Preview
 const LetterMatchingPreview = () => (
   <View style={preview.lmContainer}>
@@ -28,7 +29,7 @@ const LetterMatchingPreview = () => (
 
 //Word Games Preview
 const WordGamesPreview = () => {
-  const tiles = ["ש", "ל", "?", "ו", "ם"];
+  const tiles = ["ת", "?", "ב", "ר", "ע"];
   return (
     <View style={preview.wgContainer}>
       <View style={{ flexDirection: "row" }}>
@@ -56,7 +57,7 @@ const MemoryGamePreview = () => {
     { flipped: true, matched: true, letter: "א" },
     { flipped: false, matched: false, letter: "" },
     { flipped: false, matched: false, letter: "" },
-    { flipped: true, matched: true, letter: "א" },
+    { flipped: true, matched: true, letter: "ا" },
     { flipped: false, matched: false, letter: "" },
     { flipped: false, matched: false, letter: "" },
   ];

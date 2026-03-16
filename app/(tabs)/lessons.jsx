@@ -1,6 +1,8 @@
 import { Ionicons } from "@expo/vector-icons";
 import { FlatList, StyleSheet, Text, View } from "react-native";
-import LessonNode from "../../components/LessonNode";
+import LessonNode from "../../components/lesson";
+
+export const unstable_settings = { initialRouteName: "learn" };
 
 // Will one day be replaced by data from the DB or some other presaved plan, but until that day...
 const lessons = [
@@ -29,7 +31,6 @@ const getSide = (index) => {
 
 const renderItem = ({ item, index }) => (
   <View style={styles.nodeRow}>
-    {index > 0 && <View style={styles.connector} />}
     <LessonNode title={item.title} route={item.route} side={getSide(index)} />
   </View>
 );
@@ -51,7 +52,6 @@ const ListFooter = () => (
 export default function LanguageLessons() {
   return (
     <View style={styles.page}>
-      <View style={styles.dashedLine} />
       <FlatList
         data={lessons}
         keyExtractor={(item) => item.id}
@@ -70,17 +70,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#F5F0E8",
     position: "relative",
-  },
-  dashedLine: {
-    position: "absolute",
-    top: 0,
-    bottom: 0,
-    left: "50%",
-    width: 2,
-    borderLeftWidth: 2,
-    borderLeftColor: "#C8C0B0",
-    borderStyle: "dashed",
-    zIndex: 0,
   },
   listContent: {
     paddingTop: 48,

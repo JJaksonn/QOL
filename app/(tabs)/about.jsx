@@ -14,7 +14,7 @@ const teamMembers = [
   },
   {
     name: "Rayan",
-    role: "UI Lead",
+    role: "Design & UI Lead",
     emoji: "🎨",
   },
   {
@@ -95,15 +95,15 @@ export default function About() {
       {/* team */}
       <View style={styles.section}>
         <Text style={styles.sectionTitle}>The Team</Text>
-        <View style={styles.teamRow}>
-          {teamMembers.map((member, i) => (
-            <View key={i} style={styles.teamCard}>
-              <Text style={styles.teamEmoji}>{member.emoji}</Text>
+        {teamMembers.map((member, i) => (
+          <View key={i} style={styles.teamCard}>
+            <Text style={styles.teamEmoji}>{member.emoji}</Text>
+            <View style={styles.teamInfo}>
               <Text style={styles.teamName}>{member.name}</Text>
               <Text style={styles.teamRole}>{member.role}</Text>
             </View>
-          ))}
-        </View>
+          </View>
+        ))}
       </View>
 
       {/* footer note */}
@@ -246,5 +246,34 @@ const styles = StyleSheet.create({
   footerText: {
     fontSize: 13,
     color: "#888",
+  },
+  teamCard: {
+    backgroundColor: "#FFFFFF",
+    borderRadius: 14,
+    padding: 18,
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 16,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.05,
+    shadowRadius: 4,
+    elevation: 2,
+  },
+  teamEmoji: {
+    fontSize: 32,
+  },
+  teamInfo: {
+    flex: 1,
+  },
+  teamName: {
+    fontSize: 15,
+    fontWeight: "700",
+    color: "#0F1729",
+  },
+  teamRole: {
+    fontSize: 12,
+    color: "#888",
+    marginTop: 2,
   },
 });

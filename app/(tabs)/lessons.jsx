@@ -1,4 +1,7 @@
+import { useRouter } from "expo-router";
 import { Pressable, Text, View } from "react-native";
+
+const router = useRouter();
 export default function Lessons() {
   return (
     <View>

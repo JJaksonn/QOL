@@ -22,9 +22,9 @@ export default function TabsLayout() {
       }}
     >
       <Tabs.Screen
-        name="letters"
+        name="lessons"
         options={{
-          title: "Test",
+          title: "lessons",
           tabBarIcon: ({ color, size }) => (
             <MaterialIcons name="home" color={color} size={size} />
           ),

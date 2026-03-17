@@ -8,7 +8,7 @@
 [![Expo](https://img.shields.io/badge/Expo-000020?style=for-the-badge&logo=expo&logoColor=white)](https://expo.dev/)
 [![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white)](https://supabase.com/)
 [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-[![License: MEET](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](./LICENSE)
+[![License: MEET](https://img.shields.io/badge/License-MEET-blue.svg?style=for-the-badge)]
 
 ---
 
@@ -20,7 +20,7 @@
 
 | Register                                  | Game Hub                            | Lessons                                 |
 | ----------------------------------------- | ----------------------------------- | --------------------------------------- |
-| ![Register](./assets/readme/register.jpg) | ![Games](./assets/readme/games.jpg) | ![Lessons](./assets/readme/lessons.png) |
+| ![Register](./assets/readme/register.jpg) | ![Games](./assets/readme/games.jpg) | ![Lessons](./assets/readme/lessons.jpg) |
 
 ---
 

@@ -31,7 +31,7 @@
 - 🤝 **Friend Matching** — Get matched with a native speaker of your target language based on shared interests, goals, and proficiency
 - 🔐 **Full Auth Flow** — Multi-step onboarding that captures language goals, interests, and profile data
 - 💬 **Social Features** — Connect and practice with real people _(in development)_
-- 📈 **Progress Tracking** — Level system that grows with your in-app activity
+- 📈 **Progress Tracking** — Level system that grows with your in-app activity _(in development)_
 
 ---
 
@@ -87,5 +87,5 @@ This project is licensed under the MEET License
 <p align="center">
   Built with ❤️ as a mockup startup
   <br/>
-  <img src="./assets/readme/footer.png" width="120" alt="footer logo"/>
+ 
 </p>

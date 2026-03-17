@@ -87,9 +87,26 @@ export default function Letters() {
   const [tutorialVisible, setTutorialVisible] = useState(false);
   const [lostScreenVisible, setLostScreenVisible] = useState(false);
 
+  const resetGame = useRef(null);
+  resetGame.current = () => {
+    setLostScreenVisible(false);
+    setModalVisible(false);
+    setLetters([]);
+    letterPositions.current = {};
+    letterRefs.current = {};
+    setMistakeCount(0);
+    hasGenerated.current = false;
+    setTimeout(() => {
+      hasGenerated.current = true;
+      const generated = generateLetters(width, boardHeight);
+      setLetters(generated);
+    }, 100);
+  };
+
   const router = useRouter();
   useEffect(() => {
-    resetGame();
+    setModalVisible(false);
+    resetGame.current();
     setTutorialVisible(true);
   }, []);
 
@@ -106,22 +123,6 @@ export default function Letters() {
 
   const updatePosition = (id, language, layout) => {
     letterPositions.current[`${language}-${id}`] = { ...layout, id, language };
-  };
-
-  const resetGame = useRef(null);
-  resetGame.current = () => {
-    setLostScreenVisible(false);
-    setModalVisible(false);
-    setLetters([]);
-    letterPositions.current = {};
-    letterRefs.current = {};
-    setMistakeCount(0);
-    hasGenerated.current = false;
-    setTimeout(() => {
-      hasGenerated.current = true;
-      const generated = generateLetters(width, boardHeight);
-      setLetters(generated);
-    }, 100);
   };
 
   const handleMistake = () => {

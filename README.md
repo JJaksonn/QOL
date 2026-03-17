@@ -1,50 +1,91 @@
-# Welcome to your Expo app 👋
+# 🌐 QOL
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+> A language learning app connecting Hebrew and Arabic speakers through games, lessons, and real human conversation.
 
-## Get started
+![Banner](./assets/readme/banner.png)
 
-1. Install dependencies
+[![React Native](https://img.shields.io/badge/React_Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactnative.dev/)
+[![Expo](https://img.shields.io/badge/Expo-000020?style=for-the-badge&logo=expo&logoColor=white)](https://expo.dev/)
+[![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white)](https://supabase.com/)
+[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+[![License: MEET](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](./LICENSE)
 
-   ```bash
-   npm install
-   ```
+---
 
-2. Start the app
+## 📸 Screenshots
 
-   ```bash
-   npx expo start
-   ```
+| Home                              | Learning Hub                        | Letter Match Game                    |
+| --------------------------------- | ----------------------------------- | ------------------------------------ |
+| ![Home](./assets/readme/home.jpg) | ![Learn](./assets/readme/learn.jpg) | ![Game](./assets/readme/letters.jpg) |
 
-In the output, you'll find options to open the app in a
+| Register                                  | Game Hub                            | Lessons                                 |
+| ----------------------------------------- | ----------------------------------- | --------------------------------------- |
+| ![Register](./assets/readme/register.jpg) | ![Games](./assets/readme/games.jpg) | ![Lessons](./assets/readme/lessons.png) |
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+---
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## ✨ Features
 
-## Get a fresh project
+- 🎮 **Letter Matching Game** — Drag and drop Hebrew and Arabic equivalent letters to match them, with text-to-speech pronunciation on tap
+- 📚 **Learning Hub** — Structured lesson paths for language lessons and cultural content
+- 🤝 **Friend Matching** — Get matched with a native speaker of your target language based on shared interests, goals, and proficiency
+- 🔐 **Full Auth Flow** — Multi-step onboarding that captures language goals, interests, and profile data
+- 💬 **Social Features** — Connect and practice with real people _(in development)_
+- 📈 **Progress Tracking** — Level system that grows with your in-app activity
 
-When you're ready, run:
+---
 
-```bash
-npm run reset-project
-```
+## 🧱 Tech Stack
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+| Layer          | Technology                   |
+| -------------- | ---------------------------- |
+| Frontend       | React Native + Expo Router   |
+| Backend / Auth | Supabase (PostgreSQL + Auth) |
+| Realtime       | Supabase Realtime            |
+| Text-to-Speech | expo-speech                  |
+| Navigation     | Expo Router (file-based)     |
+| Icons          | Expo Vector Icons            |
 
-## Learn more
+---
 
-To learn more about developing your project with Expo, look at the following resources:
+## 👥 The Team
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+| Name             | Role                                   |
+| ---------------- | -------------------------------------- |
+| **Yoav Lati**    | Developer — Language Learning & Games  |
+| **Guy Almog**    | Developer — Matching & Social Features |
+| **Rayan Caesar** | Design & UI                            |
+| **Chris Khoury** | Ressarch & UX                          |
+| **Ghena Saeb**   | Product Manager                        |
 
-## Join the community
+---
 
-Join our community of developers creating universal apps.
+## 🗺️ Roadmap
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+- [x] Letter matching game with drag & drop
+- [x] Text-to-speech pronunciation
+- [x] Multi-step onboarding
+- [x] Supabase auth integration
+- [x] Learning hub with lesson path
+- [x] Game hub with previews
+- [ ] Friend matching algorithm
+- [ ] In-app chat
+- [ ] Text Lessons
+- [ ] Word games
+- [ ] Memory game
+- [ ] Progress tracking & streaks
+- [ ] Push notifications
+
+---
+
+## 📄 License
+
+This project is licensed under the MEET License
+
+---
+
+<p align="center">
+  Built with ❤️ as a mockup startup
+  <br/>
+  <img src="./assets/readme/footer.png" width="120" alt="footer logo"/>
+</p>

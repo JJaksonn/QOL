@@ -56,7 +56,7 @@ export default function About() {
         <Text style={styles.heroTitle}>About Us</Text>
         <Text style={styles.heroSubtitle}>
           We're five students in the MEET program who believe that language is
-          one of the most human things there is — and that learning one should
+          one of the most human things there is, and that learning one should
           feel that way too.
         </Text>
       </View>
@@ -68,7 +68,7 @@ export default function About() {
           This app started as a demo project, but the idea behind it is genuine.
           Arabic and Hebrew are two of the world's oldest languages, spoken by
           millions of people who live side by side. We wanted to build something
-          that makes it a little easier — and a little more fun — to understand
+          that makes it a little easier, and a little more fun, to understand
           each other.
         </Text>
         <Text style={styles.cardBody}>

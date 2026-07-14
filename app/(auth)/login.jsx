@@ -17,6 +17,7 @@ export default function LoginPage() {
   const [loading, setLoading] = useState(false);
   const { login } = useAuth();
   const router = useRouter();
+  const devEmail = process.env.DEV_LOGIN_MAIL || "";
 
   const handleLogin = async () => {
     if (!email || !password) {
@@ -33,6 +34,17 @@ export default function LoginPage() {
     }
     setLoading(true);
     const { error: authError } = await login(email, password);
+    setLoading(false);
+    if (authError) {
+      setError(authError.message);
+      return;
+    }
+    router.replace("/");
+  };
+
+  const devLogin = async () => {
+    setLoading(true);
+    const { error: authError } = await login(devEmail, "tester123");
     setLoading(false);
     if (authError) {
       setError(authError.message);
@@ -75,6 +87,10 @@ export default function LoginPage() {
         />
 
         {error ? <Text style={styles.error}>{error}</Text> : null}
+
+        <Pressable onPress={devLogin} style={styles.button}>
+          <Text style={styles.buttonText}>Dev Login</Text>
+        </Pressable>
 
         <Pressable
           onPress={handleLogin}

@@ -17,7 +17,7 @@ export default function LoginPage() {
   const [loading, setLoading] = useState(false);
   const { login } = useAuth();
   const router = useRouter();
-  const devEmail = process.env.DEV_LOGIN_MAIL || "";
+  const devEmail = process.env.EXPO_PUBLIC_DEV_LOGIN_MAIL || "";
 
   const handleLogin = async () => {
     if (!email || !password) {
